@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">Password Managment System</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Password Category
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/add_new_category">Add New Category</a></li>
+                <li><a href="/passwordCategory">View All Categorys</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Password Details
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/add_new_password">Add New Password</a></li>
+                  <li><a href="/passwordDetails">View All Passwords</a></li>
+                </ul>
+              </li>
+              <li><a href="/logout">Logout</a></li>
+          </ul>
+          <div class="navbar-header" style="float: right;"><a class="navbar-brand" href="#">Loggin As: <% if(loginUser!=""){%> <%= loginUser %> <% } %></a></div>
+        </div>
+      </nav>
+    <div class="container">
+      <div class="row">
+        <h2 class="text-center"><%= title %></h2>
+          <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="panel panel-info">
+                  <div class="panel-heading">
+                      <div class="panel-title">Add New Password Category</div>
+                  </div>  
+                  <div class="panel-body" >
+                      <form action="/" id="add_category" class="form-horizontal" method="post"  role="form">
+                          
+                          <div id="signupalert" style="display:none" class="alert alert-danger">
+                              <p>Error:</p>
+                              <span></span>
+                          </div>
+                              
+                          <div class="form-group">
+                              <label for="firstname" class="col-md-3 control-label">Category Name</label>
+                              <div class="col-md-9">
+                                  <input type="text" class="form-control" name="uname" placeholder="New Category Name">
+                              </div>
+                          </div>
+                        
+                          <div class="form-group">
+                              <!-- Button -->                                        
+                              <div class="col-md-offset-3 col-md-9">
+                              <input type="submit" name="submit" value="Add Category" class="btn btn-primary">   
+                              </div>
+                          </div>
+                          <p><a href="/passwordCategory">View All Categories List</a></p>
+                      </form>
+                   </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
