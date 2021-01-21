@@ -49,7 +49,7 @@
                       <div class="panel-title">Add New Password Category</div>
                   </div>  
                   <div class="panel-body" >
-                      <form action="/" id="add_category" class="form-horizontal" method="post"  role="form">
+                      <form action="/add_new_category" id="add_category" class="form-horizontal" method="post"  role="form">
                           
                           <div id="signupalert" style="display:none" class="alert alert-danger">
                               <p>Error:</p>
@@ -57,9 +57,15 @@
                           </div>
                               
                           <div class="form-group">
+                            <% if(errors !=""){ %>
+                              <p style="text-align: center;color:red;"><%= errors.add_category.msg %></p>
+                            <% } %>
+                            <% if(success !=""){ %>
+                              <p style="text-align: center;color:green;"><%= success %></p>
+                            <% } %>
                               <label for="firstname" class="col-md-3 control-label">Category Name</label>
                               <div class="col-md-9">
-                                  <input type="text" class="form-control" name="uname" placeholder="New Category Name">
+                                  <input type="text" class="form-control" name="add_category" placeholder="New Category Name">
                               </div>
                           </div>
                         

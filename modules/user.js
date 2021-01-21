@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/pms',{useNewUrlParser:true},{ useCreateIndex: true })
+mongoose.connect('mongodb://localhost:27017/pms',{useNewUrlParser:true, useUnifiedTopology:true , useCreateIndex: true })
 const conn = mongoose.Collection
 
 const userSchema = new mongoose.Schema({
